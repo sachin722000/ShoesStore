@@ -1,344 +1,134 @@
-<html>
-    <head>
-        <!---------------head------------------------------------->
-        <meta name="viewport" content="with=device-width, initial-scale=1.0">
-        <title>HOME</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,400;1,700;1,900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="fonts-6/css/all.css">
-        
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FPF229GKRG"></script>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShoesStore</title>
+    <link rel="stylesheet" href="main.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+</style>
+</head>
+<body>
+  <p class="navbar-brand" href="#">ShoesStore</p>
+<div class="topnav" id="myTopnav">
+  <a href="#home" class="active">Home</a>
+  <a href="./product.html">Products</a>
+  <a href="contact.html" >Contact Us</a>
+  <a href="./about.html">About Us</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+
+    <div class="img-slider">
+      <div class="slide active">
+        <img src="1.jpg" alt="">
+        <div class="info">
+   <br><br> <h2>From out store to your feet</h2>
+          
+        </div>
+      </div>
+      <div class="slide">
+        <img src="2.jpg" alt="">
+        <div class="info">
+          <h2>The best shoes at the tip of your fingers.</h2>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="3.jpg" alt="">
+        <div class="info">
+          <h2>We made shoes. </h2><h2>You spread the word.</h2>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="4.jpg" alt="">
+        <div class="info">
+          <h2>Feel the earth beneath your feet.</h2>
+          
+        </div>
+      </div>
+      <div class="slide">
+        <img src="5.jpg" alt="">
+        <div class="info">
+          <h2>We make every step comfortable.</h2>
+          
+        </div>
+      </div>
+      <div class="navigation">
+        <div class="btn active"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+    var slides = document.querySelectorAll('.slide');
+    var btns = document.querySelectorAll('.btn');
+    let currentSlide = 1;
+
+    // Javascript for image slider manual navigation
+    var manualNav = function(manual){
+      slides.forEach((slide) => {
+        slide.classList.remove('active');
+
+        btns.forEach((btn) => {
+          btn.classList.remove('active');
+        });
+      });
+
+      slides[manual].classList.add('active');
+      btns[manual].classList.add('active');
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        manualNav(i);
+        currentSlide = i;
+      });
+    });
+
+    // Javascript for image slider autoplay navigation
+    var repeat = function(activeClass){
+      let active = document.getElementsByClassName('active');
+      let i = 1;
+
+      var repeater = () => {
+        setTimeout(function(){
+          [...active].forEach((activeSlide) => {
+            activeSlide.classList.remove('active');
+          });
+
+        slides[i].classList.add('active');
+        btns[i].classList.add('active');
+        i++;
+
+        if(slides.length == i){
+          i = 0;
+        }
+        if(i >= slides.length){
+          return;
+        }
+        repeater();
+      }, 10000);
+      }
+      repeater();
+    }
+    repeat();
+    </script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-FPF229GKRG');
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
 </script>
-        
-        
-        
-        
-    </head>
-    <body>
-        <section class="header">
-            <nav>
-                <div class="logo">
-                <img src="images/rpslogo-removebg-preview%20(3).png">
-                </div>
-                <label for="btn" class="icon">
-                <span class="fa fa-bars"></span>
-                </label>
-                <input type="checkbox" id="btn">
-         <ul>
-           <li><a href="index.html">HOME</a></li>
-           <li>
-             <label for="btn-1" class="show">SYLLABUS</label>
-               <a href="syllabus.html">SYLLABUS</a>
-               <input type="checkbox" id="btn-1">
-             <ul>
-             <li><a href="data/1st-sem.pdf">1st sem</a></li>
-             <li><a href="data/2nd-sem.pdf">2nd sem</a></li>
-             <li><a href="data/3rd-sem.pdf">3rd sem</a></li>
-             <li><a href="data/4th-sem.pdf">4th sem</a></li>    
-             <li><a href="">5th sem</a></li>
-             <li><a href="data/6th.pdf">6th sem</a></li>
-             <li><a href="">7th sem</a></li>     
-            </ul>
-           </li>
-           <li>
-               <label for="btn-2" class="show">NOTES</label>
-             <a href="notes.html">NOTES</a>                                     <input type="checkbox" id="btn-2">
-             <ul>
-             <li>
-                 <label for="btn-3" class="show">1st Year</label>
-                 <a href="">1st Year
-              
-             </a>
-                 <input type="checkbox" id="btn-3">
-             <ul>
-             <li><a href="">1st Sem.</a></li>
-             <li><a href="">2nd Sem.</a></li>
-             </ul>
-             </li>
-             <li>
-             <label for="btn-4" class="show">2nd Year</label>
-             <a href="">2nd year
-             </a>
-                 <input type="checkbox" id="btn-4">
-             <ul>
-             <li><a href="">3rd Sem.</a></li>
-             <li><a href="">4th Sem.</a></li>
-             </ul>
-             </li>
-             <li>
-                 <label for="btn-5" class="show">3rd Year</label>
-                 <a href="">3rd Year
-             </a>
-                 <input type="checkbox" id="btn-5">
-             <ul>
-             <li><a href="">5th Sem.</a></li>
-             <li><a href="">6th Sem.</a></li>
-             </ul>
-             </li>
-             <li>
-                 <label for="btn-6" class="show">4th Year</label>
-                 <a href="">4th Year
-             </a>
-                 <input type="checkbox" id="btn-6">
-             <ul>
-             <li><a href="">7th Sem.</a></li>
-             </ul>
-             </li>
-             </ul>
-       </li>
-    
-       <li><a href="gallery.html">GALLERY</a></li>
-       <li><a href="events.html">EVENTS</a></li>
-       <li><a href="contact.html">CONTACT</a></li>
-      </ul>
-                <label for="btn" class="icon">
-                <span class="fa fa-bars"></span>
-                </label>
-     </nav>
-            <div class="text-box">
-                <h1> COMPUTER SCIENCE ENGINEERING</h1>
-                 
-                 
-                
-            </div>
-            
-        </section>
-        <!----------------------faculty---------------------------------------------->
-    
-        <section class="faculty">
-            <h1> OUR FACULTY</h1>
-            <p> Faculty of R.P.S.  C.E.T.  Mahendergarh</p>
-            
-            <div class="row">
-              
-                <div class="faculty-info">
-                    <img src="teachers/geetanjali.jpg">
-                    <h3>Mrs. Geetanjali Gandhi </h3>
-                    <p></p>
-                </div>
-                 <div class="faculty-info">
-                     <img src="teachers/vatan.jpg">
-                     <h3>Mr. Vatan Sehrawat</h3>
-                     <p> </p>
-                     </div>
-                     
-             <div class="faculty-info">
-                 <img src="teachers/gundeep.jpg">
-                 <h3>Dr.Gundeep Tanwar</h3>
-                 <p></p>
-                 
-                 </div>
-             </div>
-                <div class="row">
-                 <div class="faculty-info1">
-                     <img src="teachers/sarita.jpg">
-                 <h3> Mrs. Sarita</h3>
-                 <p></p>
-            
-            
-            
-            </div>
-                 <div class="faculty-info1">
-                     <img src="teachers/paridhi.jpg">
-                 <h3>Ms. Paridhi</h3>
-                 <p></p>
-            
-            
-            
-            </div>
-                 <div class="faculty-info1">
-                     <img src="teachers/saroj.jpg">
-                 <h3>Mr. Saroj Kumar Gupta</h3>
-                 <p></p>
-                </div>
-                    
-                
-               </div>
-             <div class="row">
-                 <div class="faculty-info">
-                     <img src="teachers/dharambir.jpg">
-                 <h3>Mr. Dharmbir</h3>
-                 <p></p>
-            
-            
-            
-            </div>
-                 <div class="faculty-info">
-                     <img src="teachers/sachin.jpg">
-                 <h3>Mr. Sachin</h3>
-                 <p></p>
-            
-            
-            
-            </div>
-                 <div class="faculty-info">
-                     <img src="teachers/reetu(2).jpg">
-                 <h3>Ms. Reetu</h3>
-                 <p></p>
-                </div>
-                    
-                
-               </div>
-                    
-                
-               
-    
-        
-        
-        
-        
-        </section>
-        <!--------------gallery--------->
-        <section class="gallery"><h1>GALLERY</h1>
-        <P> RPS GOI is really a good campus.<br> The best thing of the campus is its location.<br> Campus Is surrounded by beautiful mountains. Staff is coprative too.</P>
-            <div class="row">
-                <div class="gallery-rps">
-                    <a href="gallery.html" target="_self">
-                <img src="images/classes.jpg">
-                <div class="layer">
-                    <h3> classrooms </h3>
-                        </div></a>
-            </div>
-                <div class="gallery-rps">
-                    <a href="gallery.html" target="_self">
-                <img src="images/teachers.jpg">
-                <div class="layer">
-                    <h3>teachers</h3>
-                        </div></a>
-                </div>
-            <div class="gallery-rps">
-                <a href="gallery.html" target="_self">
-                <img src="images/classes.jpg">
-                <div class="layer">
-                    <h3>labs</h3>
-                    </div></a>
-                </div>
-            </div>
-            
-            
-          </section>
-        <section class="testimonials">
-            
-            <h1>WHAT OUR USERS SAYS <br></h1>
-            <h2>testimonials </h2>
-            
-            <div class="row">
-            <div class="testimonial-col">
-                <img src="images/sov.jpg">
-                    <div>
-                    <p>very good and useful website for clearing my re attempts</p>
-                        <h3> SOURAV Verdodia </h3>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-half-stroke"></i>
-                    </div>
-           </div>
-                
-            <div class="testimonial-col">
-                <img src="images/srish.jpg">
-                    <div>
-                    <p>felt in love with this website</p>
-                        <h3> Srish</h3>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        
-                        
-                    </div>
-           </div> 
-                
-           </div>
-            
-            
-            
-            
-             <div class="row">
-            <div class="testimonial-col">
-                <img src="images/pra.jpg">
-                    <div>
-                    <p>Hats Off Harsh, Really Next Level</p>
-                        <h3>Prashant Sharma </h3>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        
-                    </div>
-           </div>
-                
-            <div class="testimonial-col">
-                <img src="images/jyoti.jpg">
-                    <div>
-                    <p>Finally Someone Did This</p>
-                        <h3> Jyoti Yadav</h3>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-half-stroke"></i>
-                        
-                        
-                    </div>
-           </div> 
-                
-           </div>
-        </section>
-        
-        <!---------------------- call to action----------------->
-        <section class="cta">
-            <h1>Any IGU Student Can USe Our Website. Because Our College <br>Comes Under IGU</h1>
-            <a href="contact.html" class="hero-btn">CONTACT US </a>
-        
-        </section>
-        <!--------------------footer----------------------->
-        <section class="footer">
-            <h4>CONTACT US</h4>
-            <p> You Can Contact Us 24*7</p>
-            <div class="icons">
-                <a href="https://www.facebook.com/profile.php?id=100019594247339" target="_blank">
-                <i class="fab fa-facebook"></i>
-                </a>
-                <a href="" target="_blank">
-                <i class="fab fa-twitter"></i>
-                </a>     
-                <a href="https://www.instagram.com/harsh14.02/" target="_blank">
-                <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/harsh-yadav-674305239/" target="_blank">
-                <i class="fab fa-linkedin"></i>
-                </a>    
-                
-
-            
-            </div>        
-            <p> Made with        <i class="fa fa-heart"></i>         by Harsh </p>
-        
-        
-        
-        </section>
-        </body>
-    
+  </body>
 </html>
-        
-    
-        
-        
-        
-        
-        
-        
-        
-        
